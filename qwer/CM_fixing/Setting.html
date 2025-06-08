@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>코딩몬스터 설정</title>
+  <link rel="stylesheet" href="./css/SBstyle_fix.css">
+  <link rel="stylesheet" href="./css/Setting.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- integrity 값 변경 -->
+</head>
+<body>
+  <!-- 사이드바 -->
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="logo-icon">
+        <img src="./images/Logo.png">
+      </i>
+      <label><span class="logo_title">Coding Monster</span></label>
+    </div>
+    <ul class="nav-lists">
+            <li>
+                <a href="./Play_on.html">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span class="nav-name">Play</span>
+                </a>
+                <ul class="sub-category blank">
+                    <li><a class="nav-name" href="./Play_on.html">플레이</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="icon-list">
+                    <a href="./Ranking.html">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span class="nav-name">Ranking</span>
+                    </a>
+                    <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+                <ul class="sub-category">
+                    <li><a class="nav-name" href="#">랭킹</a></li>
+                    <li><a href="./Ranking.html">전체 랭킹</a></li>
+                    <!-- <li><a href="#">주간 랭킹</a></li> -->
+                    <li><a href="MyRanking.html">내 랭킹</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-medal"></i>
+                    <span class="nav-name">Level Quest</span>
+                </a>
+                <ul class="sub-category blank">
+                    <li><a class="nav-name" href="#">레벨 퀘스트</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="icon-list">
+                    <a href="./Community.html">
+                        <i class="fa-solid fa-comments"></i>
+                        <span class="nav-name">Community</span>
+                    </a>
+                    <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+                <ul class="sub-category">
+                    <li><a class="nav-name" href="#">커뮤니티</a></li>
+                    <li><a href="./Community.html">게시판</a></li>
+                    <li><a href="#">길드</a></li>
+                    <li><a href="#">이벤트</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="./Setting.html" id="openSettings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="nav-name">Setting</span>
+                </a>
+                <ul class="sub-category blank">
+                    <li><a class="nav-name" href="./Setting.html" id="openSettings">설정</a></li>
+                </ul>
+            </li>
+        </ul>
+    <div class="log-out-details">
+      <a href="#"><i class="fa-solid fa-right-from-bracket"></i><span>로그아웃</span></a>
+    </div>
+  </div>
+
+  <!-- 헤더 -->
+  <header class="header-section">
+    <div class="header-content">
+      <i class="fa-solid fa-bars"></i>
+      <span class="title">커뮤니티</span>
+    </div>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <section class="home-section">
+    <div class="home-content"></div>
+  </section>
+
+  <!-- 설정 모달 (중앙에 표시) -->
+  <!-- 수정: ✅ 이렇게만 유지 -->
+<div id="settingsPage" class="settings-overlay">
+  <div class="settings-modal">
+      <h2>설정</h2>
+      <div class="settings-content">
+        <div class="theme-selection">
+          <h3>테마 선택</h3>
+          <div class="theme-options">
+            <div class="theme-group">
+              <label>다크</label>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="dark1" checked />
+                <label for="dark1"><span class="color-preview" style="background-color: #503E9A;"></span></label>
+              </div>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="dark2" />
+                <label for="dark2"><span class="color-preview" style="background-color: #3B3FC9;"></span></label>
+              </div>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="dark3" />
+                <label for="dark3"><span class="color-preview" style="background-color: #3C869C;"></span></label>
+              </div>
+            </div>
+            <div class="theme-group">
+              <label>라이트</label>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="light1" />
+                <label for="light1"><span class="color-preview" style="background-color: #8661FF;"></span></label>
+              </div>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="light2" />
+                <label for="light2"><span class="color-preview" style="background-color: #FFC5FE;"></span></label>
+              </div>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="light3" />
+                <label for="light3"><span class="color-preview" style="background-color: #FFFC94;"></span></label>
+              </div>
+              <div class="theme-color">
+                <input type="radio" name="theme" id="light4" />
+                <label for="light4"><span class="color-preview" style="background-color: #8FE7B9;"></span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="settings-controls">
+          <div class="font-size-control">
+            <label for="fontSize">폰트 크기 조절</label>
+            <input type="range" id="fontSize" min="50" max="150" value="100" />
+            <span id="fontSizeValue">100</span>
+          </div>
+          <div class="wrap-option">
+            <label>자동 줄바꿈</label>
+            <div>
+              <label><input type="radio" name="wrap" checked /> 켜기</label>
+              <label><input type="radio" name="wrap" /> 끄기</label>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="saveBtn">저장</button>
+            <button id="cancelBtn">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 스크립트 연결 -->
+  <script src="./javascript/Sub.js"></script>
+  <script src="./Javascript/Setting.js"></script>
+  <script>
+    // 설정 열기
+    document.getElementById("openSettings").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("settingsPage").style.display = "flex";
+    });
+
+    // 설정 닫기
+    document.getElementById("cancelBtn").addEventListener("click", () => {
+    });
+
+
+  </script>
+</body>
+</html>

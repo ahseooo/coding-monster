@@ -1,0 +1,261 @@
+/* 사이드바 시작 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+/* 친구 목록 */
+.friends-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 255px;
+    background-color: #252779;
+    border-left: 1px solid yellow;
+}
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    width: 100%;
+    height: 60px;
+    background: #595CCB;
+}
+.profile .profile-icon {
+    display: flex;
+    width: 60px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #35A545; */
+}
+.profile .profile-icon .my-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: black;
+    border: 1px solid white;
+}
+.profile .profile-set {
+    width: calc(100% - 60px);
+    /* background-color: #f26a21; */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+.profile .profile-set .my-level {
+    margin: 0 8px;
+    font-size: 13px;
+    text-align: center;
+}
+.profile .profile-set .my-nickname {
+    width: 100%;
+    /* background-color: #35A545; */
+    white-space: nowrap;
+}
+
+
+.friends-container .friends {
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 30px; */
+    color: #fff;
+    border-top: 1px solid yellow;
+}
+.friends-container .friends .friends-list-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 30px; */
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    /* display: none; */
+}
+.friends-container .friends .friends-list-header span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid yellow;
+}
+.friends-container .friends .friends-list-header label {
+    width: 100%;
+    /* background-color: #fff; */
+    /* color: #252779; */
+    text-align: center;
+}
+
+
+.friends-container .friends .add-friends {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 30px; */
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    /* display: none; */
+}
+.friends-container .friends .add-friends.openSearching {
+    display: block;
+}
+.friends-container .friends .add-friends span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid yellow;
+}
+.friends-container .friends .add-friends button {
+    background-color: #595CCB;
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+}
+.friends-container .friends .add-friends button i {
+    color: #fff;
+}
+.friends-container .friends .add-friends .find-nickname {
+    width: calc(100% -  50px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+.friends-container .friends .add-friends .find-nickname input {
+    width: calc(100% - 35px);
+    height: 30px;
+    /* background-color: #fff; */
+    /* color: #252779; */
+    text-align: center;
+    margin-right: 5px;
+}
+.friends-container .friends .add-friends .find-nickname button {
+    background-color: #595CCB;
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+}
+.friends-container .friends .add-friends .find-nickname button:hover {
+    font-size: 15px;
+}
+.friends-container .friends .add-friends .friend-add-close {
+    width: 50px;
+    /* background-color: #3C3FC1; */
+}
+.friends-container .friends .add-friends .friend-add-close button {
+    font-size: 13px;
+}
+.friends-container .friends .add-friends .friend-add-close button:hover {
+    font-size: 15px;
+}
+
+
+.friends-container .friends .friends-list {
+    width: 100%;
+    height: calc(100% - 140px);
+    overflow: auto;
+    /* background-color: #35A545; */
+}
+.friends-container .friends .friends-list::-webkit-scrollbar {         /* 사이드바 높이 초과 시 스크롤바 표시 X */
+    /* 스크롤바 디자인 변경 필요 */
+}
+.friends-container .friends .friends-list ul {
+    height: calc(100vh - 200px);
+    width: 100%;
+    padding: 10px;
+    /* padding-top: 20px; */
+}
+.friends-container .friends .friends-list ul li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    list-style: none;
+    -webkit-user-select:none;        /* 드래그 방지 */
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    /* background-color: #f26a21; */
+    /* border: 1px solid white; */
+    /* margin: 0 20px; */
+}
+.friends-container .friends .friends-list ul li:hover {
+    /* background-color: #427FB9; */
+    background-color: #595CCB;
+    border-radius: 20px;
+}
+.friends-container .friends .friends-list ul li span {
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    /* border: 1px solid yellow; */
+    height: 100%;
+}
+.friends-container .friends .friends-list ul li .onOff-dot {
+    width: 15%;
+    color: green;
+    font-size: 12px;
+    padding-left: 5px;
+}
+.friends-container .friends .friends-list ul li .friends-nickname {
+    width: 70%;
+}
+.friends-container .friends .friends-list ul li .chat-icon {
+    width: 15%;
+    justify-content: center;
+    /* transform: scale(-1, 1); */
+}
+.friends-container .friends .friends-list ul li .chat-icon i {
+    display: none;
+}
+.friends-container .friends .friends-list ul li:hover .chat-icon i {
+    cursor: pointer;
+    display: block;
+}
+.friends-container .friends .friends-list ul li:hover .chat-icon i:hover {
+    transform: translate(-5%, -5%);
+    text-shadow: -1px 0px black, 2px 2px black, 2px 2px black, 0px -1px black;
+}
+
+.friends-container .friends .frined-findNchat {
+    width: 100%;
+    height: 40px;
+    border: 1px solid white;
+    /* background: #35A545; */
+
+}
+.friends-container .friends .frined-findNchat span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 100%;
+}
+.friends-container .friends .frined-findNchat i {
+    font-size: 20px;
+    cursor: pointer;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+}
+.friends-container .friends .frined-findNchat i:hover {
+    transform: translate(-5%, -5%);
+    text-shadow: -1px 0px black, 2px 2px black, 2px 2px black, 0px -1px black;
+}
+/* 친구 목록 끝 */

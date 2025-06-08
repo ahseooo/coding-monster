@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coding Monster</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- integrity 값 변경 -->
+        <link rel="stylesheet" href="./css/play.css">
+        <link rel="stylesheet" href="./css/chapter.css">
+        <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    </head>
+    <body>
+        <header>        <!--상단 헤더 부분-->
+            <div class="header-container">
+                <a href="./Play_on.html">
+                    <button>
+                        <h1>코딩몬스터</h1>
+                    </button>
+                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="./Play_on.html">
+                                <button>플레이</button>     <!--각각 페이지 연결 필요-->
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./Ranking.html">
+                                <button>랭킹</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                            <button>레벨 퀘스트</button>
+                        </li>
+                        <li>
+                            <a href="./Community.html">
+                                <button>커뮤니티</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./Setting.html">
+                                <button>설정</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <button id="btn_logout" onclick="kakaoLogOut()">로그아웃</button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <div class="container">
+            <div class="sidebar">
+                <div class="tabs">
+                <button class="active" onclick="showChapters('JAVA')">JAVA</button>
+                <button onclick="showChapters('PYTHON')">PYTHON</button>
+                <button onclick="showChapters('JAVASCRIPT')">JAVASCRIPT</button>
+                <button onclick="showChapters('HTML')">HTML</button>
+                </div>
+                    <!-- 자바 -->
+                    <div class="chapter-group" data-tab="JAVA">
+                        <div class="chapter-wrapper">
+                            <div class="chapter-list">
+                                <button class="chapter" onclick="toggleSubChapters('java-ch1')">Chapter 1</button>
+                                <button class="chapter" onclick="toggleSubChapters('java-ch2')">Chapter 2</button>
+                                <button class="chapter" onclick="toggleSubChapters('java-ch3')">Chapter 3</button>
+                                <button class="chapter" onclick="toggleSubChapters('java-ch4')">Chapter 4</button>
+                                <button class="chapter" onclick="toggleSubChapters('java-ch5')">Chapter 5</button>
+                                <button class="chapter" onclick="toggleSubChapters('java-ch6')">Chapter 6</button>
+                            </div>
+
+                            <div class="subchapter-list">
+                                <div class="subchapters" id="java-ch1">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                <button class="subchapter">6</button>
+                                </div>
+
+                                <div class="subchapters" id="java-ch2">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="java-ch3">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="java-ch4">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="java-ch5">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="java-ch6">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                    <!-- 파이썬 -->
+                    <div class="chapter-group" data-tab="PYTHON">
+                        <div class="chapter-wrapper">
+                            <div class="chapter-list">
+                                <button class="chapter" onclick="toggleSubChapters('py-ch1')">Chapter 1</button>
+                                <button class="chapter" onclick="toggleSubChapters('py-ch2')">Chapter 2</button>
+                                <button class="chapter" onclick="toggleSubChapters('py-ch3')">Chapter 3</button>
+                                <button class="chapter" onclick="toggleSubChapters('py-ch4')">Chapter 4</button>
+                                <button class="chapter" onclick="toggleSubChapters('py-ch5')">Chapter 5</button>
+                                <button class="chapter" onclick="toggleSubChapters('py-ch6')">Chapter 6</button>
+                            </div>
+
+                            <div class="subchapter-list">
+                                <div class="subchapters" id="py-ch1">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="py-ch2">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="py-ch3">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="py-ch4">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="py-ch5">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="py-ch6">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 자바스크리트 -->
+                    <div class="chapter-group" data-tab="JAVASCRIPT">
+                        <div class="chapter-wrapper">
+                            <div class="chapter-list">
+                                <button class="chapter" onclick="toggleSubChapters('js-ch1')">Chapter 1</button>
+                                <button class="chapter" onclick="toggleSubChapters('js-ch2')">Chapter 2</button>
+                                <button class="chapter" onclick="toggleSubChapters('js-ch3')">Chapter 3</button>
+                                <button class="chapter" onclick="toggleSubChapters('js-ch4')">Chapter 4</button>
+                                <button class="chapter" onclick="toggleSubChapters('js-ch5')">Chapter 5</button>
+                                <button class="chapter" onclick="toggleSubChapters('js-ch6')">Chapter 6</button>
+                            </div>
+
+                            <div class="subchapter-list">
+                                <div class="subchapters" id="js-ch1">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="js-ch2">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="js-ch3">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="js-ch4">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="js-ch5">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="js-ch6">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- html -->
+                    <div class="chapter-group" data-tab="HTML">
+                        <div class="chapter-wrapper">
+                            <div class="chapter-list">
+                                <button class="chapter" onclick="toggleSubChapters('html-ch1')">Chapter 1</button>
+                                <button class="chapter" onclick="toggleSubChapters('html-ch2')">Chapter 2</button>
+                                <button class="chapter" onclick="toggleSubChapters('html-ch3')">Chapter 3</button>
+                                <button class="chapter" onclick="toggleSubChapters('html-ch4')">Chapter 4</button>
+                                <button class="chapter" onclick="toggleSubChapters('html-ch5')">Chapter 5</button>
+                                <button class="chapter" onclick="toggleSubChapters('html-ch6')">Chapter 6</button>
+                            </div>
+
+                            <div class="subchapter-list">
+                                <div class="subchapters" id="html-ch1">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="html-ch2">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="html-ch3">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="html-ch4">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="html-ch5">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+
+                                <div class="subchapters" id="html-ch6">
+                                <button class="subchapter">1</button>
+                                <button class="subchapter">2</button>
+                                <button class="subchapter">3</button>
+                                <button class="subchapter">4</button>
+                                <button class="subchapter">5</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+            </div>
+            <div class="calendar">
+                <div class="level">닉네임<br>Lv.00</div>
+                <div class="header">
+                    <button onclick="prevMonth()">&#60;</button>
+                    <div id="monthYear">July 2025</div>
+                    <button onclick="nextMonth()">&#62;</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                        <th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody">
+                        <!-- 날짜 셀이 JavaScript로 삽입됨 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- <script type="text/javascript" src="./javascript/naver_logout.js"></script> -->
+        <script type="text/javascript" src="./javascript/kakao_logout.js"></script>
+        <script src="./javaScript/Calendar.js"></script>
+        <script src="./javaScript/curriculum.js"></script>
+    </body>
+</html>

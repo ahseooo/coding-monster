@@ -1,0 +1,439 @@
+/* 사이드바 시작 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+body{
+    background-color:#95A9FF;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 255px;
+    background: #f26a21;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+.sidebar.close {
+    width: 75px;
+}
+.sidebar .logo-details {
+    height: 60px;
+    width: 100%;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+}
+.sidebar .logo-details .logo-icon {     /* 사이드바 로고 */
+    font-size: 30px;
+    height: 50px;
+    min-width: 75px;
+    text-align: center;
+    line-height: 50px;
+}
+.sidebar .logo-details i img {
+    width: 50px;
+    height: 50px;
+}
+.sidebar .logo-details label .logo_title {      /* 사이드바 코딩몬스터 글자 라벨 */
+    white-space: nowrap;                /* 텍스트 밑으로 밀림 방지 */
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.2s ease;
+    transition-delay: 0.1s;
+}
+.sidebar.close .logo-details label .logo_title {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.sidebar .nav-lists {     /* 메인 사이드바 */
+    background: transparent;
+    height: 100%;
+    padding: 30px 0 150px 0;
+    padding-top: 8px;
+    overflow: auto;
+}
+.sidebar.close .nav-lists {      /* 클로즈 상태에서 사이드바 호버 시 서브 카테고리 표시 */
+    overflow: visible;          /* 이거 설정 안 하면 호버 시 서브 카테고리가 나타나지 않음 */
+}
+.sidebar .nav-lists::-webkit-scrollbar {         /* 사이드바 높이 초과 시 스크롤바 표시 X */
+    display: none;
+}
+.sidebar .nav-lists li {
+    position: relative;
+    list-style: none;
+    transition: all 0.2s ease;
+}
+.sidebar .nav-lists li:hover {       /* 마우스 커서 위치 시 색상 */
+    background: #C55A11;
+}
+.sidebar .nav-lists li .icon-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar.close .nav-lists li .icon-list a i {
+    display: block;
+}
+.sidebar .nav-lists li i {
+    height: 50px;
+    min-width: 75px;       /* 최소 너비 */
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;      /* 화살표 클릭 시 회전 속도 */
+}
+.sidebar .nav-lists li.showCategory i.arrow {
+    transform: rotate(-180deg);
+}
+/* .sidebar .nav-lists i.arrow{             siderbar open 상태에서 서브 카테고리 열려 있을 때 close하면 서브 카테고리 잔상이 남는거 시간 남을 때 해결할 예정
+    transition: 0.2s ease;                  또한 사이드바 open 시 화살표 위치가 우측으로 조정되며 자리 잡히는데 아예 open 시 위치로 고정하여 나타나도록 하고 싶음
+} */
+.sidebar.close .nav-lists i.arrow {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+.sidebar .nav-lists li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.sidebar .nav-lists li a .nav-name {     /* 메인 카테고리 글자 설정 */
+    font-size: 18px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #fff;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+}
+.sidebar.close .nav-lists li a .nav-name {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+.sidebar .nav-lists li .sub-category {       /* 서브 카테고리 */
+    padding: 10px 6px 15px 78px;
+    margin-top: 0;
+    background: #C55A11;
+    display: none;
+}
+.sidebar .nav-lists li.showCategory .sub-category {  /* 화살표 클릭 시 서브 카테고리 표시 */
+    display: block;
+}
+.sidebar .nav-lists li .sub-category a {
+    color: #fff;
+    font-size: 15px;
+    padding: 6px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.sidebar .nav-lists li .sub-category a:hover {
+    opacity: 1;
+}
+.sidebar.close .nav-lists li .sub-category {     /* 호버 시 서브 카테고리 표시 */
+    position: absolute;
+    left: 100%;
+    top: -8px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+}
+.sidebar.close .nav-lists li:hover .sub-category {
+    top: 0;
+    opacity: 1;
+    display: block;
+    pointer-events: auto;
+    transition: all 0.2s ease;
+}
+.sidebar .nav-lists li .sub-category .nav-name {
+    display: none;
+}
+.sidebar.close .nav-lists li .sub-category .nav-name {   /* 사이드바에 마우스 커서 위치 시 메인 카테고리 제목 표시 */
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+.sidebar .nav-lists li .sub-category.blank {
+    opacity: 1;
+    top: -8px;
+    pointer-events: auto;
+    padding: 5px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar .nav-lists li:hover .sub-category.blank {
+    top: 0;
+}
+.sidebar .log-out-details {          /* 로그아웃 파트 */
+    position: fixed;
+    height: 50px;
+    width: 255px;
+    bottom: 0;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+.sidebar.close .log-out-details {
+    width: 75px;
+}
+.sidebar .log-out-details a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.sidebar .log-out-details a:hover {
+    opacity: 1;
+}
+.sidebar .log-out-details a span {
+    margin-left: 22px;
+    white-space: nowrap;
+    transition: 0.2s ease;
+    transition-delay: 0.1s;
+}
+.sidebar.close .log-out-details a span {
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.home-section {            /* 메인 섹션 >> 보라색 배경 부분 */
+    position: relative;
+    background: #95A9FF;
+    height: calc(100vh - 60px);
+    left: 255px;
+    width: calc(100% - 255px);
+    transition: all 0.3s ease;
+} 
+.sidebar.close ~ .home-section {
+    left: 75px;
+    width: calc(100% - 75px);
+}
+.home-section .home-content {      /* 이부분을 헤더로 뺄 예정 */
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.home-section .home-content .fa-bars,
+.home-section .home-content .text {
+    padding-top: 5px;
+    color: #fff;            /* 텍스트, 메뉴 아이콘 컬러 */
+    margin-left: 5px;
+    font-size: 28px;
+}
+.home-section .home-content .fa-bars {
+    margin: 0 15px 0 20px;              /* 메뉴 아이콘 상하좌우 여백 */
+    cursor: pointer;
+}
+.home-section .home-content .fa-bars:hover {
+    font-size: 29px;
+}
+.home-section .home-content .text {
+    font-size: 25px;
+    font-weight: 600;
+}
+/* 사이드바 끝 */
+
+
+
+
+/* 헤더 */
+.header-section {            /* 메인 섹션 >> 보라색 배경 부분 */
+    position: relative;
+    background: #37AB48;        /* #37AB48 #35A545 #319740 */
+    height: 60px;
+    left: 255px;
+    width: calc(100% - 255px);
+    transition: all 0.3s ease;
+}
+.sidebar.close ~ .header-section {
+    left: 75px;
+    width: calc(100% - 75px);
+}
+.header-content 
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    gap: 15px;
+ }
+.language-buttons 
+{
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+.lang-btn /*아무것도 누르지 않았을 때 기본 버튼 색상*/
+{
+    background-color: #91d68f;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 14px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.lang-btn.active /*버튼을 눌렀을 때 활성화된 버튼 색상*/
+{
+    background-color: #2f6847;
+}
+  
+.header-section .header-content {      /* 이부분을 헤더로 뺄 예정 */
+    background: transparent;
+    height: 60px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+.header-section .header-content .fa-bars,
+.header-section .header-content .title {
+    padding-top: 5px;
+    color: #fff;            /* 텍스트, 메뉴 아이콘 컬러 */
+    margin-left: 5px;
+    font-size: 28px;
+}
+.header-section .header-content .fa-bars {
+    margin: 0 15px 0 20px;              /* 메뉴 아이콘 상하좌우 여백 */
+    cursor: pointer;
+}
+.header-section .header-content .fa-bars:hover {
+    font-size: 29px;
+}
+.header-section .header-content .title {
+    font-size: 25px;
+    font-weight: 600;
+}
+#all_ranking,
+#java_ranking,
+#python_ranking,
+#js_ranking,
+#html_ranking 
+{
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+.all_ranking_table,
+.java_ranking_table,
+.python_ranking_table,
+.js_ranking_table,
+.html_ranking_table
+{
+    width: 100%;
+    height: calc(100% - 150px);
+    overflow: hidden;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 25px;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+.all_ranking_table th:nth-child(1),
+.java_ranking_table th:nth-child(1),
+.python_ranking_table th:nth-child(1),
+.js_ranking_table th:nth-child(1),
+.html_ranking_table th:nth-child(1)
+{
+    width: 15%;
+}
+.all_ranking_table th:nth-child(2),
+.java_ranking_table th:nth-child(2),
+.python_ranking_table th:nth-child(2),
+.js_ranking_table th:nth-child(2),
+.html_ranking_table th:nth-child(2)
+{
+    width: 30%;
+}
+.all_ranking_table th, .all_ranking_table td,
+.java_ranking_table th, .java_ranking_table td,
+.python_ranking_table th, .python_ranking_table td,
+.js_ranking_table th, .js_ranking_table td,
+.html_ranking_table th, .html_ranking_table td
+{
+
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+} 
+.rank_cell {
+    font-family: monospace;
+    text-align: center;
+}
+.rank_star {
+    display: inline-block;
+    width: 1.5em; /*순위가 두 줄로 바뀌면서 정렬 깨지는거 방지*/
+    text-align: center;
+}
+.rank_number {
+    display: inline-block;
+    width: 2em;
+    text-align: center; /*숫자 가운데 정렬로 별과 숫자 정렬*/
+}
+.dot {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 5px 35px 0 35px;
+    
+}
+.dots_cell {
+    text-align: center;
+}
+.pagination {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    margin-top: 20px;
+}
+  
+.pagination button {
+    background-color: #4a3b8f;
+    border: none;
+    padding: 8px 14px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+}
+  
+.page_number {
+    color: black;
+    font-size: 15px;
+}

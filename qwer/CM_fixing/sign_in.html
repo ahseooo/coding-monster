@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>코딩몬스터 로그인</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- integrity 값 변경 -->
+        <link rel="stylesheet" type="text/css" href="./css/sign_in.css">
+        <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+        <!-- <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"
+        integrity="sha384-dok87au0gKqJdxs7msEdBPNnKSRT+/mhTVzq+qOhcL464zXwvcrpjeWvyj1kCdq6"
+        crossorigin="anonymous"></script> -->
+    </head>
+    <body>
+        <header>        <!--상단 헤더 부분-->
+            <div class="header-container">
+                <a href="./Play_off.html">
+                    <button>
+                        <h1>코딩몬스터</h1>
+                    </button>
+                </a>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="./Play_off.html">
+                                <button>플레이</button>     <!--각각 페이지 연결 필요-->
+                            </a>
+                        </li>
+                        <li>
+                            <button onclick="off()">랭킹</button>
+                        </li>
+                        <li>
+                            <button onclick="off()">레벨 퀘스트</button>
+                        </li>
+                        <li>
+                            <button onclick="off()">커뮤니티</button>
+                        </li>
+                        <li>
+                            <a href="./sign_in.html">
+                                <button>로그인</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./sign_up.html">
+                                <button>회원가입</button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="section-contents">
+            <div class="signin-container">
+                <h2>Login</h2>
+                <input type="text" placeholder="ID">
+                <input type="password" placeholder="Password">
+                <span>
+                    <label>아이디 저장하기</label><input type="checkbox">
+                </span>
+                <button>Login</button>
+                <p>계정이 없으신가요? <a href="./sign_up.html">회원가입</a></p>
+                
+                <p>또는 아래 소셜 계정으로 로그인</p>
+                <div class="social-login">
+                    <img id="google-login-btn" src="./images/google.png" alt="Google 로그인">
+                    <div id="naverIdLogin"></div>
+                    <a id="kakao-login-btn" href="javascript:loginWithKakao()">
+                        <img src="./images/kakaotalk.png" alt="카카오 로그인 버튼" />
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- <script src="https://accounts.google.com/gsi/client" async></script> -->
+        <!-- <script type="text/javaScript" src="./javascript/google_login.js"></script> -->
+        <script src="./javascript/offline.js"></script>
+        <script type="text/javaScript" src="./javascript/naver_login.js"></script>
+        <script type="text/javaScript" src="./javascript/kakao_login.js"></script>
+    </body>
+</html>

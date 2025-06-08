@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CodingMonster</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- integrity 값 변경 -->
+        <link rel="stylesheet" href="./css/sign_up.css">
+    </head>
+    <body>
+        <header>        <!--상단 헤더 부분-->
+            <div class="header-container">
+                <button>
+                    <h1>코딩몬스터</h1>
+                </button>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="./Play_off.html">
+                                <button>플레이</button>     <!--각각 페이지 연결 필요-->
+                            </a>
+                        </li>
+                        <li>
+                            <button onclick="off()">랭킹</button>
+                        </li>
+                        <li>
+                            <button onclick="off()">레벨 퀘스트</button>
+                        </li>
+                        <li>
+                            <button onclick="off()">커뮤니티</button>
+                        </li>
+                        <li>
+                            <a href="./sign_in.html">
+                                <button>로그인</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./sign_up.html">
+                                <button>회원가입</button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="section-contents">
+            <div class="signup-container">
+                <h2>회원가입</h2>
+                <!-- <div class="text">
+                    <input class="text_" type="text" placeholder="이름">
+                </div> -->
+                <div class="wrap">
+                    <input type="text" placeholder="닉네임">
+                    <button class="send-btn">중복확인</button>
+                </div>
+                <div class="wrap">
+                    <input type="text" placeholder="아이디">
+                    <button class="send-btn">중복확인</button>
+                </div>
+                <div class="wrap">
+                    <button class="verify-btn">본인인증</button>
+                </div>
+                <div class="text">
+                    <input class="text_" type="password" placeholder="비밀번호">
+                    <input class="text_" type="password" placeholder="비밀번호 확인">
+                </div>
+    
+                <div class="service-policy">
+                    <ul>
+                        <li>
+                            <label>
+                                <span>전체 동의</span>
+                            </label>
+                            <input type="checkbox">
+                        </li>
+                        <li>
+                            <label>
+                                <span>만 10세 이상입니다. (필수)</span>
+                            </label>
+                            <input type="checkbox">
+                        </li>
+                        <li>
+                            <label>
+                                <span>서비스 이용약관 동의 (필수)</span>
+                            </label>
+                            <input type="checkbox">
+                        </li>
+                        <li>
+                            <label>
+                                <span>개인정보 수집 및 이용 동의 (필수)</span>
+                            </label>
+                            <input type="checkbox">
+                        </li>
+                    </ul>
+                </div>
+    
+                <button class="join-btn">회원가입</button>
+            </div>
+        </section>
+        <script src="./javascript/offline.js"></script>
+
+    </body>
+</html>

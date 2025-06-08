@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 랭킹</title>
+    <link rel="stylesheet" type="text/css" href="./css/MyRanking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class="logo-icon">
+                <img src="./images/Logo.png">
+            </i>
+            <label>
+                <span class="logo_title">Coding Monster</span>
+            </label>
+        </div>
+        <ul class="nav-lists">
+            <li>
+                <a href="./Play_on.html">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span class="nav-name">Play</span>
+                </a>
+                <ul class="sub-category blank">
+                    <li><a class="nav-name" href="./Play_on.html">플레이</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="icon-list">
+                    <a href="./Ranking.html">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <span class="nav-name">Ranking</span>
+                    </a>
+                    <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+                <ul class="sub-category">
+                    <li><a class="nav-name" href="#">랭킹</a></li>
+                    <li><a href="Ranking.html">전체 랭킹</a></li>
+                    <li><a href="MyRanking.html">내 랭킹</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-medal"></i>
+                    <span class="nav-name">Level Quest</span>
+                </a>
+                <ul class="sub-category blank">
+                    <li><a class="nav-name" href="#">레벨 퀘스트</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="icon-list">
+                    <a href="./Community.html">
+                        <i class="fa-solid fa-comments"></i>
+                        <span class="nav-name">Community</span>
+                    </a>
+                    <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+                <ul class="sub-category">
+                    <li><a class="nav-name" href="#">커뮤니티</a></li>
+                    <li><a href="./Community.html">게시판</a></li>
+                    <li><a href="#">길드</a></li>
+                    <li><a href="#">이벤트</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="./Setting.html">
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="nav-name">Setting</span>
+                </a>
+                <ul class="sub-category blank">
+                    <li><a class="nav-name" href="./Setting.html">설정</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="log-out-details">
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>로그아웃</span>
+            </a>
+        </div>        
+    </div>
+
+    <header class="header-section">
+        <div class="header-content">
+          <i class="fa-solid fa-bars"></i>
+          <span class="title">커뮤니티</span>
+        </div>
+    </header>      
+
+    <section class="home-section">
+        <div class="home-content"></div>
+
+        <section class="my-ranking" id="my_ranking">
+            <div class="nickname-box">
+                <div class="top-bar">
+                    <span class="rank">100. 홀리몰리과카몰리</span>
+                    <div class="level-bar">
+                        <div class="level-progress" style="width: 95%"></div>
+                        <span class="level-label">Lv.100</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ranking-box">
+              <div class="progress-box">
+                <h2>진척도</h2>
+                <div class="language-progress">
+                  <div class="lang-row">
+                      <div class="lang-row-header">
+                          <span class="lang-rank">200. JAVA</span>
+                          <span class="lang-level">Lv.9</span>
+                      </div>                    
+                      <div class="bar">
+                          <div class="bar-fill" style="width: 40%"></div>
+                      </div>
+                      <p>푼 문제 수 : 40</p>
+                  </div>
+
+                  <div class="lang-row">
+                      <div class="lang-row-header">
+                          <span class="lang-rank">80. PYTHON</span>
+                          <span class="lang-level">Lv.13</span>
+                      </div>                    
+                      <div class="bar">
+                          <div class="bar-fill" style="width: 75%"></div>
+                      </div>
+                      <p>푼 문제 수 : 75</p>
+                  </div>
+
+                  <div class="lang-row">
+                      <div class="lang-row-header">
+                          <span class="lang-rank">0. JAVASCRIPT</span>
+                          <span class="lang-level">Lv.0</span>
+                      </div>
+                      <div class="bar"><div class="bar-fill" style="width: 30%"></div></div>
+                      <p>푼 문제 수 : 0</p>
+                  </div>
+
+                  <div class="lang-row">
+                      <div class="lang-row-header">
+                          <span class="lang-rank">40. HTML</span>
+                          <span class="lang-level">Lv.25</span>
+                      </div>
+                      <div class="bar">
+                          <div class="bar-fill" style="width: 95%"></div>
+                      </div>
+                      <p>푼 문제 수 : 95</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="badge-section">
+                <span class="edit-btn">편집</span>
+                <div class="badge-grid">
+                  <!-- 5행 × 6열 = 30개 원형 뱃지 -->
+                </div>
+              </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="./javascript/MyRanking.js"></script>
+</body>
+</html>

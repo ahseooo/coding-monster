@@ -1,0 +1,124 @@
+body {
+    font-family: sans-serif;
+    background-color: #503E9A; /* 기본 배경색 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* 설정 UI (유리창 느낌) */
+  .settings-modal {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 30px;
+    color: white;
+    width: 500px;
+    height: 500px; /* 모달 크기 */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 넘치는거 자르기 */
+    position: relative; /* ✅ */
+  }
+  
+  
+  /* 저장/취소 버튼 공통 스타일 */
+  button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #E97132; /* 버튼 색상 */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #cc5a1c;
+  }
+  
+  /* [추가] 자주 묻는 질문, 온라인 채팅, 문의 내역 글씨 오른쪽으로 */
+  .section-button span:first-child {
+    padding-left: 30px; /* 글씨를 15px 정도 오른쪽으로 이동 */
+  }
+
+  .inquiry-area p {
+    margin: 0;
+    font-size: 17.5px; /* 글자 크기 키우기 (원래 16px -> 20px로) */
+    font-weight: bold;
+  }
+
+  .inquiry-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 17.5px;
+    padding: 0 10px;
+  }
+  
+  .inquiry-button.cancel {
+    background-color: gray;
+  }
+  .inquiry-button.cancel:hover {
+    background-color: rgb(109, 109, 109);
+  }  
+  
+  #inquiryHistoryPage,
+#inquiryDetailPage {
+  flex: 1; /* 부모(.settings-modal) 안에서 꽉 채우게 */
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+  .faq-item {
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .faq-question {
+    margin: 0;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .faq-answer {
+    display: none;
+    margin: 5px 0 0 10px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  
+  .chat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+    height: 300px; /* 여기에 고정 */
+  }
+  
+  
+  .chat-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+  

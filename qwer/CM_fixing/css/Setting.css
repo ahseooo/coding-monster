@@ -1,0 +1,231 @@
+/* ===== 폰트 및 기본 설정 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url(./sub_frame.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+body {
+  background-color: #4a3b8f;
+  transition: background-color 0.3s ease;
+}
+
+
+/* ===== 메인 영역 ===== */
+.home-section {
+  position: relative;
+  background: #4a3b8f;
+  height: calc(100vh - 60px);
+  left: 255px;
+  width: calc(100% - 255px);
+  transition: all 0.3s ease;
+}
+.sidebar.close ~ .home-section {
+  left: 75px;
+  width: calc(100% - 75px);
+}
+.home-section .home-content {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.home-section .home-content .fa-bars,
+.home-section .home-content .text {
+  padding-top: 5px;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 28px;
+}
+.home-section .home-content .fa-bars {
+  margin: 0 15px 0 20px;
+  cursor: pointer;
+}
+.home-section .home-content .fa-bars:hover {
+  font-size: 29px;
+}
+.home-section .home-content .text {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* ===== 헤더 ===== */
+.header-section {
+  position: relative;
+  background: #35A545;
+  height: 60px;
+  left: 255px;
+  width: calc(100% - 255px);
+  transition: all 0.3s ease;
+}
+.sidebar.close ~ .header-section {
+  left: 75px;
+  width: calc(100% - 75px);
+}
+.header-section .header-content {
+  background: transparent;
+  height: 60px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.header-section .header-content .fa-bars,
+.header-section .header-content .title {
+  padding-top: 5px;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 28px;
+}
+.header-section .header-content .fa-bars {
+  margin: 0 15px 0 20px;
+  cursor: pointer;
+}
+.header-section .header-content .fa-bars:hover {
+  font-size: 29px;
+}
+.header-section .header-content .title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* ===== 설정 모달 ===== */
+#settingsPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;     /* 클릭 막음 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: none !important; /* 검은 배경 없앰 */
+}
+
+.settings-modal {
+    background: rgba(255, 255, 255, 0.08); /* 이거 유지 */
+    color: white; /* 글자색은 JS에서 바꿔줄 수 있음 */
+    width: 600px; /* 창이 커지지 않도록 고정 */
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.2s ease;
+    pointer-events: all; /* 모달 내부만 클릭 가능하게 */
+  }
+
+.settings-modal h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: -1px;
+}
+.settings-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.theme-selection {
+  flex: 1;
+  margin-top: -20px;
+}
+.theme-selection h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: -50px;
+}
+.theme-options {
+  display: flex;
+  justify-content: flex-start;
+  gap: 70px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+.theme-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.color-preview {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left: 8px;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+.theme-color input[type="radio"] + label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.settings-controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: flex-start;
+}
+.font-size-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+.wrap-option {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: flex-start;
+  margin-top: -27px;
+  margin-bottom: -30px;
+}
+.wrap-option div label {
+  margin-right: 20px;
+}
+.buttons {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-start;
+  margin-left: 40px;
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #E97132;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #cc5a1c;
+}
+
+#settingsPage.settings-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+#settingsPage.settings-overlay.show {
+  display: flex;
+}

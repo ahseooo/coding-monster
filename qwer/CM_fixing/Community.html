@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SubFrame</title>
+        <link rel="stylesheet" type="text/css" href="./css/community_board.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- 여기에 css 추가 -->
+    </head>
+    <body>
+        <div class="sidebar">       <!-- 사이드바 -->
+            <div class="logo-details">
+                <i class="logo-icon">
+                    <img src="./images/Logo.png">
+                </i>
+                <label>
+                    <span class="logo_title">Coding Monster</span>
+                </label>
+            </div>
+            <ul class="nav-lists">
+                <li>
+                    <a href="./Play_on.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span class="nav-name">Play</span>
+                    </a>
+                    <ul class="sub-category blank">
+                        <li><a class="nav-name" href="./Play_on.html">플레이</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icon-list">
+                        <a href="Ranking.html">
+                            <i class="fa-solid fa-ranking-star"></i>
+                            <span class="nav-name">Ranking</span>
+                        </a>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                    </div>
+                    <ul class="sub-category">
+                        <li><a class="nav-name" href="#">랭킹</a></li>
+                        <li><a href="./Ranking.html">전체 랭킹</a></li>
+                        <li><a href="./MyRanking.html">내 랭킹</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-medal"></i>
+                        <span class="nav-name">Level Quest</span>
+                    </a>
+                    <ul class="sub-category blank">
+                        <li><a class="nav-name" href="#">레벨 퀘스트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="icon-list">
+                        <a href="./Community.html">
+                            <i class="fa-solid fa-comments"></i>
+                            <span class="nav-name">Community</span>
+                        </a>
+                        <i class="fa-solid fa-angle-down arrow"></i>
+                    </div>
+                    <ul class="sub-category">
+                        <li><a class="nav-name" href="#">커뮤니티</a></li>
+                        <li><a href="./Community.html">게시판</a></li>
+                        <li><a href="#">길드</a></li>
+                        <li><a href="#">이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./Setting.html">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="nav-name">Setting</span>
+                    </a>
+                    <ul class="sub-category blank">
+                        <li><a class="nav-name" href="./Setting.html">설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="log-out-details">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>로그아웃</span>
+                </a>
+            </div>
+            
+        </div>
+        
+
+
+
+        <header>
+            <div class="header-content">
+                <i class="fa-solid fa-bars"></i>
+                <span class="title">커뮤니티</span>
+            </div>
+        </header>
+
+
+
+
+        <main class="home-container">
+            <!-- <div class="home-content"> -->
+                <!-- 여기부터 콘텐츠 코딩 -->
+                <!-- <section class="board-section">
+                    <h2>자유 게시판</h2>
+                    <div id="board" class="board-list"></div>
+                    <div id="pagination" class="pagination-controls"></div>
+                </section> -->
+                <section class="board-section">
+                    <div class="board-header">
+                        <h2>커뮤니티 게시판</h2>
+                        <button class="write-btn">글쓰기</button>
+                    </div>
+                    <table class="board-table">
+                        <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>날짜</th>
+                            <th>조회수</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- 게시글 데이터가 들어갈 부분 -->
+                        <tr>
+                            <td>2</td>
+                            <td><a href="#">예시 게시글입니다</a></td>
+                            <td>관리자</td>
+                            <td>2025-05-16</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#">예시 게시글입니다</a></td>
+                            <td>관리자</td>
+                            <td>2025-05-16</td>
+                            <td>23</td>
+                        </tr>
+                        <!-- 더 많은 게시글 -->
+                        </tbody>
+                    </table>
+
+                    <!-- 페이지네이션 -->
+                    <div class="pagination">
+                        <a href="#">«</a>
+                        <a class="active" href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">»</a>
+                    </div>
+                </section>
+            <!-- </div> -->
+        </main>
+        
+
+
+
+        <div class="friends-container">
+                <div class="profile">
+                    <div class="profile-icon">
+                        <div class="my-icon"></div>
+                    </div>
+                    <div class="profile-set">
+                        <span class="my-level">Lv.00</span>
+                        <span class="my-nickname">닉네임</span>
+                    </div>
+                </div>
+                <div class="friends">
+                    <div class="friends-list-header">
+                        <span class="friends-list-title">
+                            <label>친구 목록</label>                <!-- 친구 추가 버튼을 누르면 이 부분이 검색창으로 바뀌도록 -->
+                        </span>
+                    </div>
+
+
+                    <div class="add-friends">   <!-- 친구 찾기 창 -->
+                        <span class="find-nickname">
+                            <!-- <label id="f-list">친구 목록</label> -->
+                            <input type="text" placeholder="닉네임 입력">
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </span>
+                        <span class="friend-add-close">
+                            <button id="add-friend-close"><i class="fa-solid fa-user-plus"></i></i></button>
+                        </span>
+                    </div>
+
+
+                    <div class="friends-list">
+                        <ul id="f-list">
+                            <li>                                <!-- 친구 닉네임 js로 빼기 -->
+                                <span class="onOff-dot">
+                                    <i class="fa-solid fa-circle-dot"></i>
+                                </span>
+                                <span class="friends-nickname">친구1</span>
+                                <span class="chat-icon">
+                                    <i class="fa-solid fa-message"></i>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="onOff-dot">
+                                    <i class="fa-regular fa-circle-dot"></i></i>
+                                </span>
+                                <span class="friends-nickname">친구2</span>
+                                <span class="chat-icon">
+                                    <i class="fa-solid fa-message"></i>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="onOff-dot">
+                                    <i class="fa-regular fa-circle-dot"></i></i>
+                                </span>
+                                <span class="friends-nickname">친구3</span>
+                                <span class="chat-icon">
+                                    <i class="fa-solid fa-message"></i>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="onOff-dot">
+                                    <i class="fa-regular fa-circle-dot"></i></i>
+                                </span>
+                                <span class="friends-nickname">친구4</span>
+                                <span class="chat-icon">
+                                    <i class="fa-solid fa-message"></i>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="onOff-dot">
+                                    <i class="fa-regular fa-circle-dot"></i></i>
+                                </span>
+                                <span class="friends-nickname">친구5</span>
+                                <span class="chat-icon">
+                                    <i class="fa-solid fa-message"></i>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="onOff-dot">
+                                    <i class="fa-regular fa-circle-dot"></i></i>
+                                </span>
+                                <span class="friends-nickname">친구6</span>
+                                <span class="chat-icon">
+                                    <i class="fa-solid fa-message"></i>
+                                </span>
+                            </li>
+                            <!-- 친구 리스트는 자바스크립트 연결 필요 -->
+                        </ul>
+                    </div>
+                    <div class="frined-findNchat">
+                        <span>
+                            <i class="fa-solid fa-message"></i>
+                        </span>
+                        <!-- 다른 기능? -->
+                    </div>
+                </div>
+                
+        </div>
+
+        
+
+        <script src="./javascript/Sub.js"></script>
+        <script src="./javascript/friends_list.js"></script>
+        <!-- <script src="./javascript/Board.js"></script> -->
+        <!-- 여기에 스크립트 추가 -->
+    </body>
+</html>
